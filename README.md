@@ -1,4 +1,4 @@
-# CH32V307 floss tools project template
+# CH32V307 NoOS project template
 
 This project provide a functional cmake/ninja project for
 ch32v307 MCU using standard risc-v gcc toolchain and (for

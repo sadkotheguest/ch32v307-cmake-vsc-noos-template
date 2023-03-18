@@ -1,0 +1,20 @@
+image: registry.gitlab.com/eta-for-ci/dockerfile_mrs_toolchain
+
+stages:          # List of stages for jobs, and their order of execution
+  - build
+
+build-job:       # This job runs in the build stage, which runs first.
+  stage: build
+  script:
+    - mkdir build
+    - cd build && cmake .. -G Ninja -DUSE_WCH_TOOLCHAIN=TRUE
+    - ninja -t clean
+    - ninja -j8
+  artifacts:
+    paths:
+      - build/*.elf
+      - build/*.hex
+      - build/*.bin
+      - build/*.lst
+      - build/*.map
+    expire_in: 1 week

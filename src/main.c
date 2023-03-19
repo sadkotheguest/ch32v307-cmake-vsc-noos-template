@@ -15,6 +15,7 @@
 /* Global define */
 
 /* Global Variable */
+volatile u32 cnt = 0;
 
 void LED1_BLINK_INIT(void)
 {
@@ -29,12 +30,15 @@ void LED1_BLINK_INIT(void)
 int main(void)
 {
     u8 i = 0;
+
     Delay_Init();
     LED1_BLINK_INIT();
 
     GPIO_ResetBits(GPIOA, GPIO_Pin_0);
     while(1)
     {
+        cnt = (cnt + 1) % 0xFFFFFF;
+        // LogPointer value: ["Counter value: %x\n" cnt] 
         Delay_Ms(250);
         GPIO_WriteBit(GPIOA, GPIO_Pin_0, (i == 0) ? (i = Bit_SET) : (i = Bit_RESET));
     }

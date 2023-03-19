@@ -12,7 +12,8 @@
             "type": "cortex-debug",
             "runToEntryPoint": "main",
             "servertype": "openocd",
-            "showDevDebugOutput": "raw",
+            //"showDevDebugOutput": "raw",
+            "liveWatch": { "enabled": true, "samplesPerSecond": 2 } ,
             "svdFile": "${workspaceFolder}/svd/CH32V307xx.svd",
             "configFiles": [
                 "${workspaceFolder}/wch/wch-riscv.cfg"

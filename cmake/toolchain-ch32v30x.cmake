@@ -3,6 +3,7 @@ set(CMAKE_SYSTEM_PROCESSOR RISC-V)
 
 option(USE_WCH_TOOLCHAIN "Force the usage of WCH toolchain" FALSE)
 set(CROSSTOOL_PATH C:/Users/Sadko/AppData/Roaming/xPacks/riscv-none-elf-gcc/xpack-riscv-none-elf-gcc-12.2.0-3/bin CACHE PATH "Cross toolchain root directory")
+# set(CROSSTOOL_PATH C:/GCC/RISC-V-GCC/bin CACHE PATH "Cross toolchain root directory")
 
 function(find_toolchain)
   foreach(CROSS_PREFIX ${ARGV})

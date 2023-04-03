@@ -197,8 +197,4 @@ SECTIONS
         PROVIDE( _eusrstack = .);
     } >RAM 
 
-    PROVIDE(_eusrstack = ORIGIN(RAM) + LENGTH(RAM));
 }
-
-
-
